@@ -27,11 +27,8 @@ class SongsController < Sinatra::Base
       @artist.save
     else
       @song = Song.create(name: params[:song][:name])
-      binding.pry
-
-      @artist.song << @song
+      @artist.songs << @song
       @song.artist_id = @artist.id
-
       @song.genres << Genre.find(params[:genres])
       @artist.save
     end
