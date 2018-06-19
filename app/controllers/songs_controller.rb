@@ -23,8 +23,6 @@ class SongsController < Sinatra::Base
       @song.artist_id = @artist.id
       @song.genres << Genre.find(params[:genres])
 
-      binding.pry
-
       @artist.save
       @song.save
     end
