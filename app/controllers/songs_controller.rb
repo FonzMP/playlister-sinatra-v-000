@@ -15,9 +15,9 @@ class SongsController < Sinatra::Base
       @song = Song.create(name: params[:song][:name])
       @artist.songs << @song
       params[:genres].each do |genre|
+        @artist.genres << Genre.find(genre)
 
       end
-      @artist.genres << Genre.find(params[:genres])
       @artist.save
 
       redirect to("/songs/#{@song.slug}")
