@@ -17,7 +17,7 @@ class SongsController < Sinatra::Base
       @artist.genres << Genre.find(params[:genres])
       @artist.save
 
-      redirect "/songs/#{@song.slug}"
+      redirect to("/songs/#{@song.slug}")
     end
 
 
