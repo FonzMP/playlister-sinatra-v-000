@@ -9,9 +9,6 @@ class SongsController < Sinatra::Base
   end
 
   post '/songs' do
-    @song = Song.create(name: params[:song][:name])
-    @song.slug
-    @song.save
 
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
