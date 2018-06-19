@@ -17,6 +17,7 @@ class SongsController < Sinatra::Base
       @artist.songs << @song
     else
       @artist = Artist.find(params[:song][:artist][:id])
+      @artist.songs << @song
     end
     @artist.save
 
