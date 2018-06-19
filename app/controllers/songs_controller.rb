@@ -42,4 +42,6 @@ class SongsController < Sinatra::Base
 
     erb :"/songs/show"
   end
+
+  get '/songs/:slug/edit'
 end
