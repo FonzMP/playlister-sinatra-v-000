@@ -16,9 +16,9 @@ class SongsController < Sinatra::Base
 
   post '/songs' do
 
-    artist = Artist.find_by(name: params[:artist][:name])
+    @artist = Artist.find_by(name: params[:artist][:name])
 
-    if !artist
+    if !@artist
       @artist = Artist.create(name: params[:artist][:name])
       @song = Song.create(name: params[:song][:name])
       @artist.songs << @song
@@ -32,6 +32,7 @@ class SongsController < Sinatra::Base
       redirect "/songs/#{@song.slug}"
     else
       @song = Song.create(name: params[:song][:name])
+      @artist.song
     end
 
   end
