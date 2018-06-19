@@ -25,6 +25,7 @@ class SongsController < Sinatra::Base
       end
       @artist.save
     end
+    redirect "/songs/#{@song.slug}"
   end
 
 
