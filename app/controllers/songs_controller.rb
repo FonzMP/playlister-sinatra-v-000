@@ -16,7 +16,7 @@ class SongsController < Sinatra::Base
       @artist.songs << @song
       params[:genres].each do |genre|
         binding.pry
-        @artist.genres << Genre.find(genre.id)
+        @artist.genres << Genre.find(genre)
       end
       @artist.save
 
