@@ -14,6 +14,9 @@ class SongsController < Sinatra::Base
       @artist = Artist.create(name: params[:artist][:name])
       @song = Song.create(name: params[:song][:name])
       @artist.songs << @song
+      params[:genres].each do |genre|
+
+      end
       @artist.genres << Genre.find(params[:genres])
       @artist.save
 
