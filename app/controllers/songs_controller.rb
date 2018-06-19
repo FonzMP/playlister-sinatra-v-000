@@ -9,6 +9,7 @@ class SongsController < Sinatra::Base
   end
 
   post '/songs' do
+<<<<<<< HEAD
     @song = Song.create(name: params[:song][:name])
     @song.save
 
@@ -26,6 +27,23 @@ class SongsController < Sinatra::Base
       @artist.save
     end
     redirect "/songs/#{@song.slug}"
+=======
+    song = Song.find(name: params[:song][:name])
+    binding.pry
+    @song = Song.create(name: params[:song][:name])
+
+    if !params[:artist][:name].empty?
+      @artist = Artist.create(name: params[:artist][:name])
+    end
+
+    if !params[:genre][:name].empty?
+      @genre = Genre.create(name: params[:genre][:name])
+    end
+
+    @song.artist_id = @artist.id
+    @song.save
+
+>>>>>>> 907d9bd3532fecfbde02cd6a406605b9d80d1dcb
   end
 
 
