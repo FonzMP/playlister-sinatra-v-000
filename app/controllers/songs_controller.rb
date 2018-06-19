@@ -50,8 +50,7 @@ class SongsController < Sinatra::Base
   end
 
   post '/songs/:slug' do
-    puts params
-    @artist = Artist.find(params[:song][:artist_id])
+binding.pry    @artist = Artist.find(params[:song][:artist_id])
     @song = Song.find_by(name: params[:song][:name])
     @song.artist_id = @artist.id
 
