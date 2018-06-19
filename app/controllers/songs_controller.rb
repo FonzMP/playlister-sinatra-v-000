@@ -16,6 +16,7 @@ class SongsController < Sinatra::Base
       song.slug
       @artist.songs << song
       @artist.save
+      binding.pry
       redirect "/songs/#{song.slug_name}"
     else
       @artist = Artist.find(params[:song][:artist][:id])
