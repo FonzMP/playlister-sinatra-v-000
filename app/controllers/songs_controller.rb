@@ -22,6 +22,8 @@ class SongsController < Sinatra::Base
       @artist.songs << @song
       @song.artist_id = @artist.id
 
+      binding.pry
+
       @artist.save
       @song.save
     end
