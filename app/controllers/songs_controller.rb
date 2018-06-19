@@ -32,7 +32,7 @@ class SongsController < Sinatra::Base
       redirect "/songs/#{@song.slug}"
     else
       @song = Song.create(name: params[:song][:name])
-      @artist.song
+      @artist.song << @song
     end
 
   end
