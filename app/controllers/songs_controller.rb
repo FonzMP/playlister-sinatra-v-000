@@ -25,6 +25,8 @@ class SongsController < Sinatra::Base
 
       @artist.save
       @song.save
+    else
+      binding.pry
     end
 
     flash[:message] = "Successfully created song."
