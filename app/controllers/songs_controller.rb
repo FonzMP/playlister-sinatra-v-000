@@ -17,7 +17,6 @@ class SongsController < Sinatra::Base
       @artist.save
     end
 
-    if !params[:genre][:name].empty?
     redirect "/songs/#{@song.slug}"
   end
 
