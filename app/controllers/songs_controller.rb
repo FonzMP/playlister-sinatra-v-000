@@ -14,7 +14,6 @@ class SongsController < Sinatra::Base
 
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
-
       @artist.songs << @song
     else
       @artist = Artist.find(params[:song][:artist][:id])
