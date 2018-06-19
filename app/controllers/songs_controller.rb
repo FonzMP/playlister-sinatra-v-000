@@ -16,6 +16,10 @@ class SongsController < Sinatra::Base
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
+    else
+      @artist = Artist.find(params[:song][:artist][:id])
+      @artist.save
+    end
       # if !params[:genre][:name].empty?
       #   @genre = Genre.create(name: params[:genre][:name])
       #   @artist.genres << @genre
@@ -24,10 +28,6 @@ class SongsController < Sinatra::Base
       #     @artist.genres << genre
       #   end
       # end
-    else
-      @artist = Artist.find(params[:song][:artist][:id])
-      @artist.save
-    end
     redirect "/songs/#{@song.slug_name}"
   end
 
