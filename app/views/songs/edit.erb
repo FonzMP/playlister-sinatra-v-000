@@ -5,8 +5,8 @@
     <title>New Song</title>
   </head>
   <body>
-    <form action="/songs" method="POST">
-      Song Name: <input type="text" name="song[name]" id="Name">
+    <form action="/songs/:slug" method="POST">
+      Song Name: <input type="text" name="song[name]" id="Name" value="<%= ">
 
       <br><br>
 
