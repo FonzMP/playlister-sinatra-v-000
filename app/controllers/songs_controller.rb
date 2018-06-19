@@ -16,14 +16,14 @@ class SongsController < Sinatra::Base
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
-      if !params[:genre][:name].empty?
-        @genre = Genre.create(name: params[:genre][:name])
-        @artist.genres << @genre
-      else
-        params[:genre].each do |genre|
-          @artist.genres << genre
-        end
-      end
+      # if !params[:genre][:name].empty?
+      #   @genre = Genre.create(name: params[:genre][:name])
+      #   @artist.genres << @genre
+      # else
+      #   params[:genre].each do |genre|
+      #     @artist.genres << genre
+      #   end
+      # end
     else
       @artist = Artist.find(params[:song][:artist][:id])
       @artist.save
