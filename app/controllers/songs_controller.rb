@@ -24,12 +24,10 @@ class SongsController < Sinatra::Base
         @song.genres << Genre.find(genre)
       end
       @artist.save
-
-      flash[:message] = "Successfully created song."
-      redirect to("/songs/#{@song.slug}")
     end
 
-
+    flash[:message] = "Successfully created song."
+    redirect to("/songs/#{@song.slug}")
   end
 
 
