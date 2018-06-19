@@ -16,7 +16,7 @@ class SongsController < Sinatra::Base
 
   post '/songs' do
 
-    
+
 
     if !params[:artist][:name].empty?
       binding.pry
@@ -29,7 +29,7 @@ class SongsController < Sinatra::Base
       @artist.save
       @song.save
     else
-      artist = Artist.find_by(name: params[:artist][:name])
+      @artist = Artist.find_by(name: params[:artist][:name])
     end
 
     flash[:message] = "Successfully created song."
