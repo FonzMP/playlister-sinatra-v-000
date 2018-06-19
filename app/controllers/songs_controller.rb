@@ -14,10 +14,6 @@ class SongsController < Sinatra::Base
       @artist = Artist.create(name: params[:artist][:name])
 
       @artist.songs << Song.create(params[:song][:name])
-      song.slug
-      binding.pry
-
-      @artist.songs << song
       @artist.save
       binding.pry
 
