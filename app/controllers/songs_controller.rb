@@ -16,7 +16,7 @@ class SongsController < Sinatra::Base
 
   post '/songs' do
 
-    binding.pry
+    artist = Artist.find_by(name: params[:artist][:name])
 
     if !params[:artist][:name].empty?
       binding.pry
