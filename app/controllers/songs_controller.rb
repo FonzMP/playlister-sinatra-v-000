@@ -53,5 +53,6 @@ class SongsController < Sinatra::Base
     @artist = Artist.find(params[:song][:artist_id])
     @song = Song.find_by_slug(params[:slug])
     puts @artist
+    puts @slug
   end
 end
