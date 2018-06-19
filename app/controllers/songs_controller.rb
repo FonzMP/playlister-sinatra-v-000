@@ -50,9 +50,9 @@ class SongsController < Sinatra::Base
   end
 
   post '/songs/:slug' do
+    puts params
     @artist = Artist.find(params[:song][:artist_id])
     @song = Song.find_by(name: params[:song][:name])
-    binding.pry
     @song.artist_id = @artist.id
 
     redirect "/songs/#{@song.slug}"
