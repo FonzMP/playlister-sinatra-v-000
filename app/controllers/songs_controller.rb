@@ -13,7 +13,7 @@ class SongsController < Sinatra::Base
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
 
-      @artist.songs << Song.create(params[:song][:name])
+      @artist.songs << Song.create(params[:song])
       @artist.save
 
       binding.pry
