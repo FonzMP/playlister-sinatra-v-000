@@ -7,6 +7,7 @@
   <body>
     <form action="/songs/:slug" method="POST">
       Update <%= @song.name %>
+      <input type="text" name="song[name]" value="<%= @song.name %>">
 
       <br><br>
 
