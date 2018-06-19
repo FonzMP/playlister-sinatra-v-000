@@ -8,5 +8,6 @@ use ArtistsController
 use SongsController
 use GenresController
 
+use Rack::Flash
 use Rack::MethodOverride
 run ApplicationController
