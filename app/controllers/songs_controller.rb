@@ -32,7 +32,6 @@ class SongsController < Sinatra::Base
       redirect "/songs/#{@song.slug}"
     end
 
-
   end
 
 
