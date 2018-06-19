@@ -12,7 +12,6 @@ class SongsController < Sinatra::Base
 
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
-      binding.pry
 
       song = Song.create(params[:song][:name])
       song.slug
