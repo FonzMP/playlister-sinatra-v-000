@@ -15,7 +15,6 @@ class SongsController < Sinatra::Base
       @artist.songs << Song.create(params[:song][:name])
     else
       @artist = Artist.find(params[:song][:artist][:id])
-      binding.pry
     end
     @artist.save
 
