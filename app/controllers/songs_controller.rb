@@ -13,12 +13,12 @@ class SongsController < Sinatra::Base
     if !params[:artist][:name].empty?
       @artist = Artist.create(name: params[:artist][:name])
       @song << Song.create(params[:song])
-      @artist.songs << Song.create(params[:song])
+      @artist.songs << @song
       @artist.save
 
       binding.pry
 
-      redirect "/songs/#{params[:song][:name].slug}"
+      redirect "/songs/#{@song.slug}"
     end
   end
 
