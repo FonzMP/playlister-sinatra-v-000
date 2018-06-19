@@ -29,9 +29,10 @@ class SongsController < Sinatra::Base
       @song = Song.create(name: params[:song][:name])
       @artist.song << @song
       @song.artist_id = @artist.id
+      binding.pry
+
       @song.genres << Genre.find(params[:genres])
       @artist.save
-      binding.pry
     end
     flash[:message] = "Successfully created song."
     redirect "/songs/#{@song.slug}"
