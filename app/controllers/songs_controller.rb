@@ -15,10 +15,9 @@ class SongsController < Sinatra::Base
       @song = Song.create(name: params[:song][:name])
       @artist.songs << @song
       binding.pry
-      @artist.save
-
-      redirect "/songs/#{@song.slug}"
+      @artist.save    
     end
+    redirect "/songs/#{@song.slug}"
   end
 
 
