@@ -50,6 +50,6 @@ class SongsController < Sinatra::Base
   end
 
   post '/songs/:slug' do
-    
+    puts params
   end
 end
