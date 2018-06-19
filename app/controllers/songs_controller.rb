@@ -6,8 +6,6 @@ class SongsController < Sinatra::Base
 
   enable :sessions
 
-  use Rack::Flash
-
   get '/songs/new' do
     erb :"/songs/new"
   end
